@@ -86,3 +86,69 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+let total = 0;
+let change = 0;
+let net = 0;
+let netArray = [];
+let tot_chg = 0;
+let avr_chg = 0;
+let highest = ["", 0];
+let lowest = ["", 0];
+
+console.log("Financial Analysis")
+///// The total number of months included in the dataset.
+console.log("Total Months: " + finances.length);
+
+///// The net total amount of Profit/Losses over the entire period.
+for(let index = 0; index < finances.length; index++){
+    total += finances[index][1];
+}
+    console.log("Total amount of $ Profit/Losses " + total)
+
+/////The average of the changes in Profit/Losses over the entire period.
+//Change between each months
+for(let index = 0; index < finances.length; index++){
+    for(let index2 = 0; index2 < finances[index].length; index2++){
+    if(typeof finances[index][index2] !== 'string'){
+        change = finances [index][index2] - net;
+        net = finances [index][index2];
+        netArray.push(change) }
+    }
+////The greatest increase in profits (date and amount) over the entire period.
+if(change > highest[1]){
+    highest = [finances[index][0],finances[index][1]]}
+
+////The greatest decrease in losses (date and amount) over the entire period.
+if(change < lowest[1]){
+    lowest = [finances[index][0],finances[index][1]]}
+}
+
+//Total change
+for(let index = 0; index < netArray.length; index++){
+        tot_chg += netArray[index];
+}
+    console.log("Total Change $ " + tot_chg);
+//Average change in in Profit/Losses
+avr_chg = Math.round((tot_chg/86)*100)/100;
+console.log("Average Change $ " + avr_chg)
+
+
+console.log("Greatest increase in profits $: " + highest[0] + " $" + highest [1]) 
+console.log("Greatest decrease in profits $: " + lowest[0] + " $" + lowest [1]) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
