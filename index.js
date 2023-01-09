@@ -134,8 +134,8 @@ avr_chg = Math.round((tot_chg/86)*100)/100;
 console.log("Average Change $ " + avr_chg)
 
 
-console.log("Greatest increase in profits $: " + highest[0] + " $" + highest [1]) 
-console.log("Greatest decrease in profits $: " + lowest[0] + " $" + lowest [1]) 
+console.log("Greatest increase in profits : " + highest[0] + " $" + highest [1]) 
+console.log("Greatest decrease in profits : " + lowest[0] + " $" + lowest [1]) 
 
 
 
